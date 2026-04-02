@@ -38,7 +38,9 @@ curl -sSL https://raw.githubusercontent.com/init-cerebra/ops-workspace/main/init
 If you prefer to configure the workspace step-by-step:
 
 ### 1. Install mise (The Engine)
+```bash
 curl https://mise.jdx.dev/install.sh | sh
+```
 
 ### 2. Clone & Sync Configuration
 ```bash
@@ -49,16 +51,23 @@ ln -sf ~/work-env/config.toml ~/.config/mise/config.toml
 
 ### 3. Initialize Environment
 Add the following to your ~/.bashrc or ~/.zshrc:
+```bash
 eval "$(~/.local/bin/mise activate bash)"
-
-Then, install all pinned binaries:
-mise install
-mise reshim
+~/.local/bin/mise install
+~/.local/bin/mise reshim
+```
 
 ---
 
 ## 📂 Global Configuration (config.toml)
 ```toml
+[env]
+EDITOR = "nano"
+KUBE_EDITOR = "nano"
+TERRAGRUNT_TFPATH = "terraform"
+CHECKPOINT_DISABLE = "1"
+TELEMETRY_DISABLED = "1"
+
 [tools]
 # --- IaC Stack ---
 terraform = "1.14.8"
@@ -71,27 +80,35 @@ k9s = "0.50.18"
 helm = "4.1.3"
 flux2 = "2.8.3"
 
+# --- Security & Secrets ---
+age = "1.2.1"
+sops = "3.9.4"
+
 # --- Local Development ---
 kind = "0.31.0"
 "aqua:kubernetes-sigs/cloud-provider-kind" = "0.10.0"
 
-# --- CLI Utilities ---
+# --- CLI Utilities & Networking ---
 fzf = "0.70.0"
 usage = "3.2.0"
 jq = "1.8.1"
 yq = "4.52.5"
+bat = "0.25.0"
+zoxide = "0.9.7"
+doggo = "0.7.1"
 
 [settings]
 autoinstall = true
 yes = true
 shims_dir = "~/.local/share/mise/shims"
 all_backend_refresh = "24h"
+```
 
 ---
 ## ⚡ Productivity Aliases (Recommended)
 
 Add these to your shell profile to speed up daily operations:
-
+```bash
 # Kubernetes
 alias k='kubectl'
 alias kgp='kubectl get pods'
@@ -102,10 +119,15 @@ alias tf='terraform'
 alias tg='terragrunt'
 alias tctl='talosctl'
 
+# Modern CLI Tools
+alias cat='bat'
+# Jump to directories (zoxide)
+eval "$(zoxide init $(basename $SHELL) --cmd j)"
+
 # mise
 alias m='mise'
 alias mls='mise ls --installed'
+```
 
 ---
-*Architected for high-performance DevOps and digital sovereignty.*
-```
+

@@ -1,0 +1,41 @@
+[env]
+EDITOR = "nano"
+KUBE_EDITOR = "nano"
+TERRAGRUNT_TFPATH = "terraform"
+CHECKPOINT_DISABLE = "1"
+TELEMETRY_DISABLED = "1"
+
+[tools]
+# --- IaC Stack ---
+terraform = "1.14.8"
+terragrunt = "1.0.0"
+talos = "1.12.6"
+
+# --- K8s Control Plane ---
+kubectl = "1.35.3"
+k9s = "0.50.18"
+helm = "4.1.3"
+flux2 = "2.8.3"
+
+# --- Security & Secrets ---
+age = "1.2.1"
+sops = "3.9.4"
+
+# --- Local Development ---
+kind = "0.31.0"
+"aqua:kubernetes-sigs/cloud-provider-kind" = "0.10.0"
+
+# --- CLI Utilities & Networking ---
+fzf = "0.70.0"
+usage = "3.2.0"
+jq = "1.8.1"
+yq = "4.52.5"
+bat = "0.25.0"
+zoxide = "0.9.7"
+doggo = "0.7.1"
+
+[settings]
+autoinstall = true
+yes = true
+shims_dir = "~/.local/share/mise/shims"
+all_backend_refresh = "24h"
