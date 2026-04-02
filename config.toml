@@ -25,17 +25,15 @@ sops = "3.9.4"
 kind = "0.31.0"
 "aqua:kubernetes-sigs/cloud-provider-kind" = "0.10.0"
 
-# --- CLI Utilities & Networking ---
+# --- CLI Utilities ---
 fzf = "0.70.0"
 usage = "3.2.0"
 jq = "1.8.1"
 yq = "4.52.5"
 bat = "0.25.0"
-zoxide = "0.9.7"
-doggo = "0.7.1"
 
 [settings]
-all_plugin_options_refresh = "24h"
 asdf_compat = true
 jobs = 4
 raw = false
+autoinstall = true
