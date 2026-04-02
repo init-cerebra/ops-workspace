@@ -23,15 +23,29 @@ This repository manages my local **Management Plane**—the control station used
 
 ## 🚀 New Machine Setup (Bootstrap)
 
-Follow these steps to "hydrate" your environment on a fresh OS:
+You can hydrate your environment on a fresh OS using either the **Automated One-Step Script** or the **Manual Setup**.
+
+## Option A: Automated One-Step Hydration
+If you are on a fresh OS, you can bootstrap everything (install mise, clone the repo, link config, and install tools) with a single command:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/init-cerebra/ops-workspace/main/init.sh | bash
+```
+>
+**Note: After the script finishes, add eval "$(~/.local/bin/mise activate bash)" to your ~/.bashrc or ~/.zshrc.**
+
+## Option B: Manual Setup
+If you prefer to configure the workspace step-by-step:
 
 ### 1. Install mise (The Engine)
 curl https://mise.jdx.dev/install.sh | sh
 
 ### 2. Clone & Sync Configuration
+```bash
 git clone https://github.com/init-cerebra/ops-workspace.git ~/work-env
 mkdir -p ~/.config/mise
 ln -sf ~/work-env/config.toml ~/.config/mise/config.toml
+```
 
 ### 3. Initialize Environment
 Add the following to your ~/.bashrc or ~/.zshrc:
