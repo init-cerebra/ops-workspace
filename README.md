@@ -91,7 +91,7 @@ alias tctl='talosctl'
 # mise
 alias m='mise'
 alias mls='mise ls --installed'
-```
 
 ---
 *Architected for high-performance DevOps and digital sovereignty.*
+```
