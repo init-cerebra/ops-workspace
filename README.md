@@ -29,9 +29,9 @@ Follow these steps to "hydrate" your environment on a fresh OS:
 curl https://mise.jdx.dev/install.sh | sh
 
 ### 2. Clone & Sync Configuration
-git clone https://github.com/your-username/local-env.git ~/local-env
+git clone https://github.com/init-cerebra/ops-workspace.git ~/work-env
 mkdir -p ~/.config/mise
-ln -sf ~/local-env/config.toml ~/.config/mise/config.toml
+ln -sf ~/work-env/config.toml ~/.config/mise/config.toml
 
 ### 3. Initialize Environment
 Add the following to your ~/.bashrc or ~/.zshrc:
