@@ -77,6 +77,7 @@ all_backend_refresh = "24h"
 ## ⚡ Productivity Aliases (Recommended)
 
 Add these to your shell profile to speed up daily operations:
+
 # Kubernetes
 alias k='kubectl'
 alias kgp='kubectl get pods'
