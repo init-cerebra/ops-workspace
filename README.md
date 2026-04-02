@@ -44,7 +44,7 @@ mise reshim
 ---
 
 ## 📂 Global Configuration (config.toml)
-
+```toml
 [tools]
 # --- IaC Stack ---
 terraform = "1.14.8"
@@ -74,11 +74,9 @@ shims_dir = "~/.local/share/mise/shims"
 all_backend_refresh = "24h"
 
 ---
-
 ## ⚡ Productivity Aliases (Recommended)
 
 Add these to your shell profile to speed up daily operations:
-
 # Kubernetes
 alias k='kubectl'
 alias kgp='kubectl get pods'
@@ -92,6 +90,7 @@ alias tctl='talosctl'
 # mise
 alias m='mise'
 alias mls='mise ls --installed'
+```
 
 ---
 *Architected for high-performance DevOps and digital sovereignty.*
